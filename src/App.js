@@ -16,14 +16,27 @@ class App extends React.Component {
       pokemonCount : 1
     }
   }
+  exampleFunction(){
+    console.log("Hello world, from button click")
+  }
+  decreasePokemonCount(currentCount) {
+      this.setState({pokemonCount: currentCount -1})
+  }
+  increasePokemonCount(currentCount) {
+    this.setState({pokemonCount: currentCount +1})
+}
   render(){
     return(
       <div>
         <h1>Pokemon page</h1>
+        <button onClick={() => {this.decreasePokemonCount(this.state.pokemonCount)}}>Decrease Pokemon Count</button>
+        <button onClick={() => {this.increasePokemonCount(this.state.pokemonCount)}}>Increase Pokemon Count</button>
         <Pokemon/>
       </div>
     )
   }
 }
+
+
 
 export default App;
